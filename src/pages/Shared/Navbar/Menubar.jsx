@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './Menubar.css'
+import { BsFillPersonBadgeFill } from "react-icons/bs";
 
 
 const Menubar = () => {
@@ -20,7 +21,7 @@ const Menubar = () => {
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} to="#memes">
-              Dank memes
+            <Link to='/register'><BsFillPersonBadgeFill /></Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
