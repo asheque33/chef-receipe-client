@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Chefs = () => {
+const ChefDetails = () => {
     return (
         <div>
-           chef dtls 
+           chefdtsl 
         </div>
     );
 };
 
-export default Chefs;
+export default ChefDetails;

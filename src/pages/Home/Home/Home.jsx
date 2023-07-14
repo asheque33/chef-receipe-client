@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import slider1 from '../sliderImg/slider1.jpg';
 import slider2 from '../sliderImg/slider2.jpg';
@@ -5,10 +6,13 @@ import slider3 from '../sliderImg/slider3.jpg';
 import slider4 from '../sliderImg/slider4.jpg';
 import slider5 from '../sliderImg/slider5.jpg';
 import Carousel from 'react-bootstrap/Carousel';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
-  return(
-  <Carousel>
+  return (
+    <div>
+      <div>
+      <Carousel>
   <Carousel.Item interval={2000}>
     <img
       className="d-block w-75 h-25 mx-auto"
@@ -71,6 +75,13 @@ const Home = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-)};
+      </div>
+
+      <Outlet></Outlet>
+
+    </div>
+
+  )
+};
 
 export default Home;
