@@ -24,6 +24,25 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                children:[
+                    {
+                        path: '/',
+                        element: <Chefs></Chefs>,
+                        loader: () => fetch('http://localhost:5000/chefs'),
+                        children: [
+                            {
+                                path: '/chef',
+                                element: <Chef></Chef>
+                            },
+                           
+                        ]
+                    },
+                ]
+            },
+            {
+                path: '/chef/:id',
+                element: <ChefDetails></ChefDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
             },
             {
                 path: '/blog',
@@ -41,22 +60,7 @@ const router = createBrowserRouter([
         ]
     },
     // chef layout
-    {
-        path: '/',
-        element: <Chefs></Chefs>,
-        loader: () => fetch('http://localhost:5000/chefs'),
-        children: [
-            {
-                path: '/',
-                element: <Chef></Chef>
-            },
-            {
-                path: '/:id',
-                element: <ChefDetails></ChefDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
-            }
-        ]
-    },
+    
 
 
 ])

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import './ChefDetails.css'
 
 const ChefDetails = () => {
     const chefDetail = useLoaderData();
@@ -7,23 +8,22 @@ const ChefDetails = () => {
     const {name, picture, numRecipes, yearsExperience, likes,recipeDetailsPage
     } = chefDetail;
     return (
-        <div className="card h-100">
-        <img src={picture} className="card-img-top h-100" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">Years of Experience : {yearsExperience}</li>
-            <li className="list-group-item">Numbers Of Recipes : {numRecipes}</li>
-            <li className="list-group-item">Likes : {likes}</li>
-          </ul>
-          <p className="card-text">{recipeDetailsPage}</p>
-        </div>
-        <div className="card-footer">
-          {/* <button className='border-0 bg-light'><Link to={`/${id}`} className="btn btn-primary">View Recipes Button</Link></button> */}
-        </div>
+        <div className='chefDetails row row-cols-1 row-cols-md-2 g-4'>
+
+<img className='w-50' src={picture} alt="" />
+
+      <div className="card-body ps-4 pe-4 ">
+        <h3 className="card-title mt-4 fw-bolder">{name}</h3>
+        <h5 className='mt-2 fw-bolder'>{yearsExperience} years experience</h5>
+        <h5 className='fw-bolder'>{numRecipes} recipes</h5>
+        <h5 className='fw-bolder'>{likes} likes</h5>
+           <h6 className="card-text fw-bolder pe-4">{recipeDetailsPage}</h6>
+         </div>
+       
 
 
-      </div>
+     </div>
+
     );
 };
 

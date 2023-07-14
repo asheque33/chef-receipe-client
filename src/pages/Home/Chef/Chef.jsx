@@ -6,7 +6,7 @@ import header from '../../../../images/heading.png'
 
 const Chef = ({ chef }) => {
   console.log(chef);
-  const { name, picture, numRecipes, yearsExperience, likes} = chef;
+  const {id, name, picture, numRecipes, yearsExperience, likes} = chef;
   return (
 
     <div>
@@ -23,7 +23,7 @@ const Chef = ({ chef }) => {
           {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
         </div>
         <div className="card-footer">
-          <button className='border-0 bg-light'><Link to={`/chef/:id`} className="btn btn-primary">View Recipes Button</Link></button>
+          <button className='border-0 bg-light'><Link to={`/chef/${id}`} className="btn btn-primary">View Recipes Button</Link></button>
         </div>
 
 

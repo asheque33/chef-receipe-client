@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {  useLoaderData } from 'react-router-dom';
+import {  Outlet, useLoaderData } from 'react-router-dom';
 import Chef from '../Chef/Chef';
 
 
@@ -20,6 +20,7 @@ const Chefs = () => {
                   </Chef>
                   ))
               }
+              <Outlet></Outlet>
             
         </div>
 

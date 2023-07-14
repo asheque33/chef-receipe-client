@@ -7,6 +7,7 @@ import slider4 from '../sliderImg/slider4.jpg';
 import slider5 from '../sliderImg/slider5.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import Chef from '../Chef/Chef';
+import { Outlet } from 'react-router-dom';
 
 
 const Home = () => {
@@ -77,7 +78,7 @@ const Home = () => {
   </Carousel.Item>
 </Carousel>
 
-
+<Outlet></Outlet>
       </div>
 
 
