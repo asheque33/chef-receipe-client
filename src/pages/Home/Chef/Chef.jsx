@@ -14,7 +14,7 @@ const Chef = ({ chef }) => {
       <div className="card h-100">
         <img src={picture} className="card-img-top h-100" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
+          <h5 className="card-title ps-3">{name}</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">Years of Experience : {yearsExperience}</li>
             <li className="list-group-item">Numbers Of Recipes : {numRecipes}</li>
