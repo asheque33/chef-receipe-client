@@ -7,7 +7,9 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Blog from '../pages/Blog/Blog';
 import Chefs from '../pages/Home/Chefs/Chefs';
+import Chef from '../pages/Home/Chef/Chef';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
+
 
 // import Main from '../layout/Main';
 // import Home from '../pages/Home/Home/Home';
@@ -22,21 +24,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                children: [
-                    {
-                        path: '/',
-                        element: <Chefs></Chefs>,
-                        loader: () => fetch('http://localhost:5000/chefs'),
-                        children: [
-
-                            {
-                                path: '/chefs/:id',
-                                element: <ChefDetails></ChefDetails>,
-                                loader: ({params}) => fetch(`http://localhost:5000/${id}`)
-                            },
-                        ]
-                    }
-                ]
             },
             {
                 path: '/blog',
@@ -49,6 +36,24 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+
+        ]
+    },
+    // chef layout
+    {
+        path: '/',
+        element: <Chefs></Chefs>,
+        loader: () => fetch('http://localhost:5000/chefs'),
+        children: [
+            {
+                path: '/',
+                element: <Chef></Chef>
+            },
+            {
+                path: '/:id',
+                element: <ChefDetails></ChefDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
             }
         ]
     },

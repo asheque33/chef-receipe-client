@@ -4,13 +4,18 @@ import Footer from '../pages/Shared/Footer/Footer';
 import Menubar from '../pages/Shared/Navbar/Menubar';
 
 
+
 const Main = () => {
     return (
-        <div>
+        <>
             <Menubar></Menubar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+            <div style={{
+        minHeight: `calc(100vh - 100px)`,
+      }}>
+                <Outlet/>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

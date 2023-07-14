@@ -6,17 +6,18 @@ import slider3 from '../sliderImg/slider3.jpg';
 import slider4 from '../sliderImg/slider4.jpg';
 import slider5 from '../sliderImg/slider5.jpg';
 import Carousel from 'react-bootstrap/Carousel';
-import { Outlet } from 'react-router-dom';
+import Chef from '../Chef/Chef';
+
 
 const Home = () => {
   return (
-    <div>
-      <div>
+   
+      <div className='h-25'>
       <Carousel>
   <Carousel.Item interval={2000}>
     <img
       className="d-block w-75 h-25 mx-auto"
-      src={slider1}
+      src={slider3}
       alt="First slide"
     />
     <Carousel.Caption>
@@ -38,7 +39,7 @@ const Home = () => {
   <Carousel.Item interval={1500}>
     <img
       className="d-block w-75 h-25 mx-auto"
-      src={slider3}
+      src={slider1}
       alt="Third slide"
     />
     <Carousel.Caption>
@@ -75,11 +76,12 @@ const Home = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+
+
       </div>
 
-      <Outlet></Outlet>
 
-    </div>
+    
 
   )
 };
