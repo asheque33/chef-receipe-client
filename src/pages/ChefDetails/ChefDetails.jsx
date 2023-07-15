@@ -37,11 +37,10 @@ const ChefDetails = () => {
                 <li>Pan searing.</li>
                 <li>Roasting.</li>
            </ul>
+           <h6>Rating : {ratings}</h6>
           </Card.Text>
         </Card.Body>
-        <Card.Footer>
-      
-        </Card.Footer>
+        
       </Card>
       <Card>
         <Card.Img variant="top" className='h-100' src={recipeImg2} />
@@ -56,11 +55,9 @@ const ChefDetails = () => {
                 <li>Pan searing.</li>
                 <li>Roasting.</li>
            </ul>
+          <h6>Rating : {ratings}</h6>
           </Card.Text>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
       </Card>
       <Card>
         <Card.Img variant="top" className='h-100' src={recipeImg3} />
@@ -75,11 +72,9 @@ const ChefDetails = () => {
                 <li>Pan searing.</li>
                 <li>Roasting.</li>
            </ul>
+          <h6>Rating : {ratings}</h6>
           </Card.Text>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
       </Card>
     </CardGroup>  
         
