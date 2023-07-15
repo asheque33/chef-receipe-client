@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import './ChefDetails.css'
@@ -33,7 +34,7 @@ const ChefDetails = () => {
      </div>
 
         {/*Specific Chef's recipe  */}
-     <CardGroup className='mt-4'>
+     <CardGroup className='mt-4 mb-4'>
       <Card>
         <Card.Img variant="top" className='h-100' src={recipeImg1} />
         <Card.Body>

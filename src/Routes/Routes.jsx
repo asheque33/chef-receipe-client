@@ -10,6 +10,7 @@ import Chefs from '../pages/Home/Chefs/Chefs';
 import Chef from '../pages/Home/Chef/Chef';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
 import LoadingSpinner from '../pages/Home/LoadingSpinner/LoadingSpinner';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 
 // import Main from '../layout/Main';
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: '/',
