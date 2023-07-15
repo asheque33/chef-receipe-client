@@ -10,19 +10,18 @@ const Menubar = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand ><Link to="/">Chef Palace</Link></Navbar.Brand>
+        <Navbar.Brand ><Link to="/" className='d-flex fw-bold'>Chef Palace</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/login">Login</NavLink>
+          <Nav className="mx-auto">
+            <NavLink to="/" className={({ isActive }) => isActive ? "text-info text-decoration-underline" : "" }>Home</NavLink>
+            <NavLink to="/blog" className={({ isActive }) => isActive ? "text-info text-decoration-underline" : "" }>Blog</NavLink>
             
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} to="#memes">
-            <Link to='/register'><BsFillPersonBadgeFill /></Link>
-            </Nav.Link>
+          <NavLink to="/login" className={({ isActive }) => isActive ? "text-info text-decoration-underline" : "" }>Login</NavLink>
+            <NavLink to='/register'><BsFillPersonBadgeFill /></NavLink>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
