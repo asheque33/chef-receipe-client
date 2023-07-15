@@ -9,6 +9,7 @@ import Blog from '../pages/Blog/Blog';
 import Chefs from '../pages/Home/Chefs/Chefs';
 import Chef from '../pages/Home/Chef/Chef';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
+import LoadingSpinner from '../pages/Home/LoadingSpinner/LoadingSpinner';
 
 
 // import Main from '../layout/Main';
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            {
+                path: '/spinner',
+                element:<LoadingSpinner/>
+            }
 
         ]
     },

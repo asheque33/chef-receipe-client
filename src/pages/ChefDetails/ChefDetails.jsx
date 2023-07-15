@@ -1,12 +1,19 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import './ChefDetails.css'
 import { Card, CardGroup } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import LoadingSpinner from '../Home/LoadingSpinner/LoadingSpinner';
 
 
 const ChefDetails = () => {
+    const navigation = useNavigation();
+    console.log(navigation.state);
+    if(navigation.state === 'loading'){
+        return <LoadingSpinner/>
+    }
+
     const chefDetail = useLoaderData();
     console.log(chefDetail);
     const {name, picture, numRecipes, yearsExperience, likes,recipeDetailsPage,recipeImg1,recipeImg2,recipeImg3,ratings1,ratings2,ratings3} = chefDetail;
