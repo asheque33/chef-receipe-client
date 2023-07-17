@@ -58,20 +58,18 @@ const Login = () => {
         console.log(githubLoggedIn);
         setSuccess('User with Github logged in successfully')
         setError('');  })
-        .catch((error) => {
+    .catch((error) => {
             console.log(error);
             const errorMessage = error.message;
             setError(errorMessage);
             setSuccess(''); })
-
+        // ---- ---- ----- -------
                                 };
-
-     const toggle = () => {
-         setVisible(!isVisible)
-     }
-   
-
-
+    // handleLogin____end_____
+    
+    const toggle = () => {
+        setVisible(!isVisible)
+    }
 
     return (
         <div className='w-50 mx-auto mt-4'>
@@ -98,7 +96,7 @@ const Login = () => {
 
 <div className='mt-2 '>
 <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-primary me-4"><FaGoogle/> Google SignIn </button>
-<button type="button" className="btn btn-outline-info"><FaGithub/> Github SignIn </button>
+<button onClick={handleGithubSignIn} type="button" className="btn btn-outline-info"><FaGithub/> Github SignIn </button>
 </div>
 
     <p className='text-danger mt-2'>{error}</p>

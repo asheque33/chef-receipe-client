@@ -6,6 +6,7 @@ import { Card, CardGroup } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import LoadingSpinner from '../Home/LoadingSpinner/LoadingSpinner';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 
 const ChefDetails = () => {
@@ -17,11 +18,11 @@ const ChefDetails = () => {
 
     const chefDetail = useLoaderData();
     console.log(chefDetail);
-    const {name, picture, numRecipes, yearsExperience, likes,recipeDetailsPage,recipeImg1,recipeImg2,recipeImg3,ratings1,ratings2,ratings3} = chefDetail;
+    const {id,name, picture, numRecipes, yearsExperience, likes,recipeDetailsPage,recipeImg1,recipeImg2,recipeImg3,ratings1,ratings2,ratings3} = chefDetail;
     return (
     <>
 {/* Chef Details with banner */}
-        <div className='chefDetails row row-cols-1 row-cols-md-2 g-4'>
+       { id < 7 ? <> <div className='chefDetails row row-cols-1 row-cols-md-2 g-4'>
 <img className='w-50'  src={picture} alt="" />
 
       <div className="card-body ps-4 pe-4 ">
@@ -108,7 +109,7 @@ const ChefDetails = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </CardGroup>  
+    </CardGroup> </> : <ErrorPage/>}  
         
   </>
        

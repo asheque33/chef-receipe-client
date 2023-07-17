@@ -10,7 +10,7 @@ const Main = () => {
         <>
             <Menubar></Menubar>
             <div style={{
-                minHeight: `calc(100vh - 100px)`,
+                minHeight: `calc(100vh - 261.5px)`,
             }}> <Outlet />
             </div>
             <Footer></Footer>
