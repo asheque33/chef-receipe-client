@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import slider1 from '../sliderImg/slider1.jpg';
 import slider2 from '../sliderImg/slider2.jpg';
 import slider3 from '../sliderImg/slider3.jpg';
@@ -8,9 +8,16 @@ import slider5 from '../sliderImg/slider5.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import Chef from '../Chef/Chef';
 import { Outlet } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
 const Home = () => {
+const {loading} = useContext(AuthContext);
+if(loading){
+  return <LoadingSpinner/>
+}
+
   return (
    
       <div className='h-25'>

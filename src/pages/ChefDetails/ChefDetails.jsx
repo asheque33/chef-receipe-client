@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import './ChefDetails.css'
 import { Card, CardGroup } from 'react-bootstrap';
@@ -7,9 +7,28 @@ import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import LoadingSpinner from '../Home/LoadingSpinner/LoadingSpinner';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import { toast } from 'react-hot-toast';
 
 
-const ChefDetails = () => {
+
+  const ChefDetails = () => {
+    const [isDisabled1st,setIsDisabled1st] = useState(false);
+    const [isDisabled2nd,setIsDisabled2nd] = useState(false);
+    const [isDisabled3rd,setIsDisabled3rd] = useState(false);
+    const handleToaster1st = () => { 
+      toast.success('Favorite Recipe Added');
+      setIsDisabled1st(true);
+      };
+    const handleToaster2nd = () => { 
+      toast.success('Favorite Recipe Added');
+      setIsDisabled2nd(true);
+      };
+    const handleToaster3rd = () => { 
+      toast.success('Favorite Recipe Added');
+      setIsDisabled3rd(true);
+      };
+
+
     const navigation = useNavigation();
     console.log(navigation.state);
     if(navigation.state === 'loading'){
@@ -19,6 +38,7 @@ const ChefDetails = () => {
     const chefDetail = useLoaderData();
     console.log(chefDetail);
     const {id,name, picture, numRecipes, yearsExperience, likes,recipeDetailsPage,recipeImg1,recipeImg2,recipeImg3,ratings1,ratings2,ratings3} = chefDetail;
+
     return (
     <>
 {/* Chef Details with banner */}
@@ -57,6 +77,7 @@ const ChefDetails = () => {
            fullSymbol={<FaStar></FaStar>}
            />  {ratings1}         
            </h6>
+          <button onClick={handleToaster1st} type="button" disabled={isDisabled1st} className="btn btn-success">Add to Favorite</button>
           </Card.Text>
         </Card.Body>
         
@@ -82,6 +103,7 @@ const ChefDetails = () => {
            fullSymbol={<FaStar></FaStar>}
            />  {ratings2}         
            </h6>
+           <button onClick={handleToaster2nd} type="button" disabled={isDisabled2nd} className="btn btn-success">Add to Favorite</button>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -106,6 +128,7 @@ const ChefDetails = () => {
            fullSymbol={<FaStar></FaStar>}
            />  {ratings3}         
            </h6>
+           <button onClick={handleToaster3rd} type="button" disabled={isDisabled3rd} className="btn btn-success">Add to Favorite</button>
           </Card.Text>
         </Card.Body>
       </Card>
