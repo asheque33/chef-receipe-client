@@ -11,6 +11,7 @@ import Chef from '../pages/Home/Chef/Chef';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
 import LoadingSpinner from '../pages/Home/LoadingSpinner/LoadingSpinner';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import PrivateRoute from './PrivateRoute';
 
 
 // import Main from '../layout/Main';
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/chef/:id',
-                element: <ChefDetails></ChefDetails>,
+                element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
             },
             {
